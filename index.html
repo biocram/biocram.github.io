@@ -4,20 +4,20 @@
   <script src="https://js.stripe.com/v3/"></script>
   <script>
     function onLoad() {
-      console.log("Executing onLoad()");
+      //console.log("Executing onLoad()");
       let stripe = Stripe('pk_live_51I3q85D1fFjPTgUd7wYCmyQTd9iJYObzU74OODHzZo6ch4XOgMT4hDi6EobDQOe65JWTXVvO6UJS7Dslchvi1TWI00TEhb6dpl');
-      console.log("Init Stripe");
+      //console.log("Init Stripe");
       let url_string = window.location.href;
       let url = new URL(url_string);
       let sessionId = url.searchParams.get("sessionid");
-      console.log("Found sessionId: " + sessionId);
-      console.log("redirectToCheckout");
+      //console.log("Found sessionId: " + sessionId);
+      //console.log("redirectToCheckout");
       stripe.redirectToCheckout({
         sessionId: sessionId
       }).then(function (result) {
-        console.log("redirectToCheckout result: " + result);
+        //console.log("redirectToCheckout result: " + result);
         if (result.error) {
-          console.log("redirectToCheckout error: " + result.error);
+          //console.log("redirectToCheckout error: " + result.error);
           alert(result.error.message);
         }
 });
