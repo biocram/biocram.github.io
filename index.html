@@ -3,14 +3,14 @@
   <title>Checkout</title>
   <script src="https://js.stripe.com/v3/"></script>
   <script>
-    function foo() {
+    function redirectToCheckout() {
       var url_string = window.location.href;
       var url = new URL(url_string);
-      //var c = url.searchParams.get("c");
+      var sessionId = url.searchParams.get("sessionid");
       console.log(url);
     }
   </script>
 </head>
-<body onLoad="foo()">
+<body onLoad="redirectToCheckout()">
 </body>
 </html>
